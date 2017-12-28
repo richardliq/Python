@@ -1,0 +1,23 @@
+# >>; <<; join; split
+x = 100
+# >> binary right move
+y = x >>2
+print (y)
+# << binary left move
+y = x <<2
+print (y)
+x = 65536
+# for can be used within bracket of function
+y = list(str((x >> i) % 256) for i in (24, 16, 8, 0))
+print(y)
+# join function can join list or string
+y = '.'.join(str((x >> i) % 256) for i in (24, 16, 8, 0))
+print (y)
+z = list(x >> i for i in (1,2))
+print (z)
+z = '.'.join(str(z))
+print (z)
+# split return a list
+ip = '192.168.0.2'
+t = ip.split('.')
+print (t)
