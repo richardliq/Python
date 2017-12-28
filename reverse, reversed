@@ -1,21 +1,21 @@
 # usage of reverse() and reversed()
 n = [1,2,3]
-print n
+print (n)
 t = n.reverse()
-print n     # n is reversed
-print t     # t is nothing
+print (n)     # n is reversed
+print (t)     # t is nothing
 g = n       # g is copy from n
-print g
+print (g)
 
-n.reverse()
-print n
+n.reverse()     # n is reversed again
+print (n)
 
 for i in reversed(n):   # just used for iteration, does not affect n
-    print i
+    print (i)
 
-print n
+print (n)   # reversed(n) does not change n
 n.reverse   # lack of (), there is not any function
-print n
+print (n)
 
 
 
