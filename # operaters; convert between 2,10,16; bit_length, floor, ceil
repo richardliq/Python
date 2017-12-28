@@ -1,0 +1,78 @@
+# operaters; convert between 2,10,16; bit_length, floor, ceil
+import math
+# bit_length return the binary length of a number
+# 101
+a= 5
+print(a.bit_length())
+# 1000000
+b = 64
+print(b.bit_length())
+start = 4
+
+x = 100
+# convert int to hex
+y = hex(x)
+# convert hex to int
+y = int(y,16)
+print(y)
+# convert int to bin
+y = bin(x)
+# convert bin to int
+y = int(y,2)
+print(y)
+
+#convert bin to hex
+y = bin(x)
+print(y)
+# cannot use as y = hex(y)
+y = hex(int(y,2))
+print(y)
+# convert hex to bin
+y = hex(x)
+y = bin(int(y,16))
+# cannot use as y = bin(y)
+print (y)
+
+a = 16
+b = 5
+print("a%b = ", a%b)    # mod
+print("a/b = ", a/b)
+print("a**b = ", a**b)
+print("a//b = ", a//b)  # int
+
+print("a&b = ", a&b)    # and
+print("a|b = ", a|b)    # or
+print("a^b = ", a^b)    # eor
+print("~a = ", ~a)      # not
+print("a&-b = ", a & -b)
+
+print ("a is b = ", a is b) # a and b is a same object
+x = 3.1415
+print ("floor = ", math.floor(x))
+print ("ceil = ", math.ceil(x))
+
+
+
+
+
+
+3
+7
+100
+100
+0b1100100
+0x64
+0b1100100
+a%b =  1
+a/b =  3.2
+a**b =  1048576
+a//b =  3
+a&b =  0
+a|b =  21
+a^b =  21
+~a =  -17
+a&-b =  16
+a is b =  False
+floor =  3
+ceil =  4
+
