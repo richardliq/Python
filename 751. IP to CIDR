@@ -1,0 +1,59 @@
+def IPtoInt(IP):
+    sum = 0
+    for i in IP.split('.'):     # ip.split('.') return a list
+        sum = sum*256+ int(i)
+    return sum
+
+
+def InttoIP(n):
+    # first move right 24 bites, get the left number , it is in [0,255], mod with 255 get the value
+    # then move right 16 bites, get left two numbers, the left one is times of 255, the right one is as the same as above
+    # then same way with moving right 8 and without moving
+    return '.'.join(str((n>>i)%256) for i in [24,16,8,0])
+
+
+def IPtoCIDR(IP,n):
+    r = []
+    # start from designated IP
+    x = IPtoInt(IP)
+    while n>0:
+        # this & operation can return the number of bites that can get
+        # 4: 0000 0100; -4: 1111 1100; 4 & -4 = 0000 0100 = 4; we get number 4 means that we can use 4 CIDR
+        # and we can get the mask = 32 -2 = 30; because 0000 0100 = 4, there are two 0 bites on the right
+        # there are 4 ips in this CIDR, so the next n = n - 4
+
+        m = x & -x  # get the number of 0 on the right. if odd, m = 1; if even, m = n (m mod 2**n = 0)
+        # when block size is larger than what we need, so we choose mask form the max of block size from n size
+        mask = max(33-m.bit_length(),33-n.bit_length())
+        r.append(InttoIP(x)+'/'+str(mask))
+        # 32-mask: get the bites of block
+        # 32-1; 31-2; 30-4; 29-8; 28-16...
+
+        # cannot use following because we have to choose mask
+        # when m =32, n = 50-4-8-16 = 22, we cannot use 32, but 16; like: 22-16 = 6; 6-4=2 ;
+        # x = x + m
+        # n = n - m
+
+        # start form the next top of block
+        x = x + (1 << (32 - mask))
+        # n is reduced by the number of previous size of block
+        n = n - (1 << (32 - mask))
+
+
+        print (m,1<<(32-mask))
+        print (x,n)
+
+
+
+    return r
+
+
+
+
+IP = '192.0.0.4'
+n = 50
+x = IPtoInt(IP)
+print (x)
+y = InttoIP(x)
+print(y)
+print (IPtoCIDR(IP,n))
