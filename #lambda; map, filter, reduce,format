@@ -1,0 +1,41 @@
+#lambda; map, filter, reduce,format
+# lambda can be used as an expression
+# python 3 removed reduction function
+g = lambda x:x+1
+g = lambda x,y:x**y
+
+def h(x,y):
+    return x**y
+
+print(g(2,3))
+print(h(2,3))
+
+foo = [2, 18, 9, 22, 17, 24, 8, 12, 27]
+
+# list is a funciton here, list()
+# In python 3, need to convert iterations into list
+
+# reduce(function, sequence, starting_value)
+# map(function, sequence)
+for i in map( lambda x: x*x, [y for y in range(10)] ):
+    print(i,end = ' ')
+print()
+print (map( lambda x: x*x, [y for y in range(10)]))
+# filter(function, sequence)
+print (list(map(lambda x: x * 2 + 10, foo)))
+t = list(filter(lambda x: x % 3 == 0, foo))
+print (t)
+
+x,y = 4,5
+print('{}*{}= {} '.format(x, y, x * y), end='')
+
+
+
+
+8
+8
+0 1 4 9 16 25 36 49 64 81 
+<map object at 0x0022F990>
+[14, 46, 28, 54, 44, 58, 26, 34, 64]
+[18, 9, 24, 12, 27]
+4*5= 20
