@@ -1,0 +1,47 @@
+# set, sorted, reverse, any, all
+l = [8,2,4,2,7,4,9,3,4,5,6,7]
+m = sorted(l)
+print (m)
+m = sorted(l,reverse=True)
+
+# set function can automatically sort numeric list, but sting will not
+m = set(m)
+print (m)
+l = ['e','t','f','g','h','g','e','r','t','e','r','g','d','s','g']
+m = set(l)
+print (m)
+m = sorted(set(l),reverse=True)
+print (m)
+l = [5,8,2,9,7,1,4,0]
+m = set(l)
+print (m)
+
+# if all l are 0 or null, any return False
+l = [0,'']
+print(any(l))
+# if not all l are 0 or null, any return Ture
+l = [0,'',1]
+print(any(l))
+
+# if all item is not 0 or null, all return True
+l = [2,'a',1]
+print(all(l))
+# if not all items are not 0 or null, all return Fasle
+l = [0,'']
+print(all(l))
+l = [0,'',1]
+print(all(l))
+
+
+
+
+[2, 2, 3, 4, 4, 4, 5, 6, 7, 7, 8, 9]
+{2, 3, 4, 5, 6, 7, 8, 9}
+{'r', 'd', 't', 'e', 's', 'g', 'f', 'h'}
+['t', 's', 'r', 'h', 'g', 'f', 'e', 'd']
+{0, 1, 2, 4, 5, 7, 8, 9}
+False
+True
+True
+False
+False
