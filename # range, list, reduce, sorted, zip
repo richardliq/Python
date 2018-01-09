@@ -1,0 +1,99 @@
+# range, list, reduce, sorted, zip
+#
+n = 4
+print range(1,n)
+print range(n)
+print reduce(lambda x, y: x * y, range(1, n))
+print reduce(lambda x, y: x * y, range(1, n),3)
+
+
+def add(x,y): return x + y
+
+print reduce(add, range(1, 11))
+z = range(11)
+print reduce(add, z, 100)
+
+a = '123'
+print len(a)
+
+x = 'sdfdaf'
+
+print sorted(x)
+x = ['d','f','a']
+x.sort()
+print x
+
+a = [1,2,3]
+b = [4,5,6]
+# return a list of two sets
+c = zip(a,b)
+print c
+d = dict(zip(a,b))
+print d
+# convert
+e = zip(*c)
+print e
+# be subject to the shortest one
+x = ['a','b','c','d']
+f = zip(a,x)
+print f
+g = zip(a,b,x)
+print g
+
+# The same function
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+b =  [[row[col] for row in a] for col in range(len(a[0]))]
+print b
+print zip(*a)
+
+
+# list usage
+A = [-1,2,3,-4,-5,6,7,-8,9]
+print A
+print A[:]
+print A[::]
+print A[2:]
+print A[:2]
+# B and A are the same list
+B = A
+B[0] = 1
+print A
+print B
+# copy list
+C = A[::]
+C[0] = 0
+print A
+print C
+
+
+
+
+
+[1, 2, 3]
+[0, 1, 2, 3]
+6
+18
+55
+155
+3
+['a', 'd', 'd', 'f', 'f', 's']
+['a', 'd', 'f']
+[(1, 4), (2, 5), (3, 6)]
+{1: 4, 2: 5, 3: 6}
+[(1, 2, 3), (4, 5, 6)]
+[(1, 'a'), (2, 'b'), (3, 'c')]
+[(1, 4, 'a'), (2, 5, 'b'), (3, 6, 'c')]
+[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+[(1, 4, 7), (2, 5, 8), (3, 6, 9)]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[3, -4, -5, 6, 7, -8, 9]
+[-1, 2]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[0, 2, 3, -4, -5, 6, 7, -8, 9]
+
+
+
