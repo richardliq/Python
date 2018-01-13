@@ -1,0 +1,91 @@
+# list usage
+A = [-1,2,3,-4,-5,6,7,-8,9]
+print "len(A) = ", len(A)
+# empty of left = 0, empty of right = len(list)
+print " A[:] = A[0:] = A[0:9]all items"
+print A[:]
+print A[0:]
+print A[0:9]
+print A[0:len(A)]
+print A[5:]
+print A[5:9]
+print A[:5]
+print A[0:5]
+print " A[::] = duplicate list, A will not change with C"
+C = A[::]
+C[0] = 0
+print A
+print C
+print "B and A are the same list, A will change with B"
+B = A
+B[0] = 1
+print A
+print B
+
+# return items between index 2 and index 3, not include index 4
+print A[2:4]
+
+# return 2 items from right
+print A[-2:]
+print A[-2:9]
+# cut 2 items from right
+print A[:-2]
+print A[0:-2]
+
+B = A[:-2]
+print B
+print A
+B[0] = 0
+print B
+print A
+
+B = A[3:]
+print B
+print A
+B[0] = 0
+print B
+print A
+print
+# first get 5 items from right, then cut 2 items from right
+print A[-5:-1]
+# get items between left and right, include left but not right
+print A[5:5]
+print A[5:6]
+
+
+
+
+len(A) =  9
+ A[:] = A[0:] = A[0:9]all items
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[6, 7, -8, 9]
+[6, 7, -8, 9]
+[-1, 2, 3, -4, -5]
+[-1, 2, 3, -4, -5]
+ A[::] = duplicate list, A will not change with C
+[-1, 2, 3, -4, -5, 6, 7, -8, 9]
+[0, 2, 3, -4, -5, 6, 7, -8, 9]
+B and A are the same list, A will change with B
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[3, -4]
+[-8, 9]
+[-8, 9]
+[1, 2, 3, -4, -5, 6, 7]
+[1, 2, 3, -4, -5, 6, 7]
+[1, 2, 3, -4, -5, 6, 7]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[0, 2, 3, -4, -5, 6, 7]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[-4, -5, 6, 7, -8, 9]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+[0, -5, 6, 7, -8, 9]
+[1, 2, 3, -4, -5, 6, 7, -8, 9]
+
+[-5, 6, 7, -8]
+[]
+[6]
+
