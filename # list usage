@@ -1,3 +1,4 @@
+
 # list usage
 A = [-1,2,3,-4,-5,6,7,-8,9]
 print "len(A) = ", len(A)
@@ -24,13 +25,19 @@ print B
 
 # return items between index 2 and index 3, not include index 4
 print A[2:4]
-
-# return 2 items from right
+print
+# if there is nagative, -2 means len(A)-2 = 9-2 = 7
 print A[-2:]
 print A[-2:9]
+print A[7:9]
+print A[7:]
+# first get 5 items from right, then cut 2 items from right
+print A[-5:-1]
+print A[4:8]
 # cut 2 items from right
 print A[:-2]
 print A[0:-2]
+print A[:7]
 
 B = A[:-2]
 print B
@@ -46,8 +53,7 @@ B[0] = 0
 print B
 print A
 print
-# first get 5 items from right, then cut 2 items from right
-print A[-5:-1]
+
 # get items between left and right, include left but not right
 print A[5:5]
 print A[5:6]
@@ -72,8 +78,14 @@ B and A are the same list, A will change with B
 [1, 2, 3, -4, -5, 6, 7, -8, 9]
 [1, 2, 3, -4, -5, 6, 7, -8, 9]
 [3, -4]
+
 [-8, 9]
 [-8, 9]
+[-8, 9]
+[-8, 9]
+[-5, 6, 7, -8]
+[-5, 6, 7, -8]
+[1, 2, 3, -4, -5, 6, 7]
 [1, 2, 3, -4, -5, 6, 7]
 [1, 2, 3, -4, -5, 6, 7]
 [1, 2, 3, -4, -5, 6, 7]
@@ -85,7 +97,11 @@ B and A are the same list, A will change with B
 [0, -5, 6, 7, -8, 9]
 [1, 2, 3, -4, -5, 6, 7, -8, 9]
 
-[-5, 6, 7, -8]
 []
 [6]
+
+
+
+
+
 
